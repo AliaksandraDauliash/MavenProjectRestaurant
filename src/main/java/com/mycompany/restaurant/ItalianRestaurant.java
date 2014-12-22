@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.mycompany.restaurant;
 
-package restaurants;
-
-import lunches.*;
+import com.mycompany.lunch.KindOfLunch;
+import com.mycompany.lunch.Lunch;
+import com.mycompany.lunch.UsualItalianLunch;
+import com.mycompany.lunch.VegeterianItalianLunch;
 
 /**
  *
@@ -21,10 +23,11 @@ public class ItalianRestaurant extends Restaurant {
 
     @Override
     protected Lunch createLunch(String type) {
-        if (type.equals("Lunch")) {
-            return new ItalianLunch();
-        } else if (type.equals("Lunch1")) {
-            return new ItalianLunch1();
+        KindOfLunch kind = new KindOfLunch();
+        if (type.equals(kind.vegkind)) {
+            return new VegeterianItalianLunch();
+        } else if (type.equals(kind.uskind)) {
+            return new UsualItalianLunch();
         } else {
             return null;
         }

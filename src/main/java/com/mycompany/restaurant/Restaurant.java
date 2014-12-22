@@ -3,24 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.mycompany.restaurant;
 
-package restaurants;
-
-import lunches.*;
+import com.mycompany.lunch.Lunch;
 
 /**
  *
  * @author 123
  */
 public abstract class Restaurant {
-    public Lunch orderLunch (String type) {
+
+    public Lunch orderLunch(String type) {
         Lunch lunch;
         lunch = createLunch(type);
+        String str = lunch.toString();
+        System.out.println(str);
+        boolean flag = lunch.equals(lunch);
+        if(flag){
+            System.out.println("Object is created!");
+        }
         lunch.prepare();
         lunch.cook();
         lunch.unfold();
         lunch.put();
         return lunch;
     }
-    protected abstract Lunch createLunch (String type);
+
+    protected abstract Lunch createLunch(String type);
 }
