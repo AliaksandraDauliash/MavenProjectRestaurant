@@ -6,6 +6,9 @@
 
 package com.mycompany.mavenproject3;
 
+import restaurants.*;
+import lunches.Lunch;
+
 /**
  *
  * @author 123

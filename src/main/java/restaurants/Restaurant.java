@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.mavenproject3;
+package restaurants;
+
+import lunches.*;
 
 /**
  *

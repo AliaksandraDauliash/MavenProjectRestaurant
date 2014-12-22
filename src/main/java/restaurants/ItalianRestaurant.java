@@ -4,33 +4,36 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.mavenproject3;
+package restaurants;
+
+import lunches.*;
 
 /**
  *
  * @author 123
  */
-public class TraditionalRestaurant extends Restaurant {
+public class ItalianRestaurant extends Restaurant {
 
-    private static TraditionalRestaurant instance;
+    private static ItalianRestaurant instance;
 
-    private TraditionalRestaurant() {
+    private ItalianRestaurant() {
     }
 
+    @Override
     protected Lunch createLunch(String type) {
         if (type.equals("Lunch")) {
-            return new TraditionalLunch();
+            return new ItalianLunch();
         } else if (type.equals("Lunch1")) {
-            return new TraditionalLunch1();
+            return new ItalianLunch1();
         } else {
             return null;
         }
     }
 
-    public static TraditionalRestaurant getInstance() {
+    public static ItalianRestaurant getInstance() {
         if (instance == null) {
-            instance = new TraditionalRestaurant();
+            instance = new ItalianRestaurant();
         }
         return instance;
     }
-}  
+}

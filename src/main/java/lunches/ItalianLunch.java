@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.mycompany.mavenproject3;
+package lunches;
 
 /**
  *
@@ -19,6 +19,7 @@ public class ItalianLunch extends Lunch {
         drinks = "Coffee and chocolate drink in Italian";
      }
 
+    @Override
     public void unfold() {
         System.out.println("Putting food on dishes");
     }
