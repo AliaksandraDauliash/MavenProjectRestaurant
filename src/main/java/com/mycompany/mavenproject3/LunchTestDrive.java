@@ -5,12 +5,8 @@
  */
 package com.mycompany.mavenproject3;
 
-import com.mycompany.lunch.KindOfLunch;
-import com.mycompany.lunch.Lunch;
-import com.mycompany.restaurant.ItalianRestaurant;
-import com.mycompany.restaurant.Restaurant;
-import com.mycompany.restaurant.TraditionalRestaurant;
-
+import com.mycompany.lunch.*;
+import com.mycompany.restaurant.*;
 /**
  *
  * @author 123
@@ -25,26 +21,22 @@ public class LunchTestDrive {
         Restaurant itRest = ItalianRestaurant.getInstance();
         Restaurant trRest = TraditionalRestaurant.getInstance();
         for (int i = 0; i < it; i++) {
-            int itl;
-            itl = (int) (0 + Math.random() * 2);
+            int itl = (int) (0 + Math.random() * 2);
             if (itl == 0) {
-                KindOfLunch kind = new KindOfLunch();
-                Lunch lunch = itRest.orderLunch(kind.vegkind);
+                Lunch lunch = itRest.orderLunch(KindOfLunch.VEGKIND);
                 System.out.println(lunch.getName() + " ready.");
             } else {
-                KindOfLunch kind = new KindOfLunch();
-                Lunch lunch = itRest.orderLunch(kind.uskind);
+                Lunch lunch = itRest.orderLunch(KindOfLunch.USKIND);
                 System.out.println(lunch.getName() + " ready.");
             }
         }
         for (int i = 0; i < tr; i++) {
-            int itl;
-            itl = (int) (0 + Math.random() * 2);
+            int itl = (int) (0 + Math.random() * 2);
             if (itl == 0) {
-                Lunch lunch = trRest.orderLunch("Vegeterian lunch");
+                Lunch lunch = trRest.orderLunch(KindOfLunch.VEGKIND);
                 System.out.println(lunch.getName() + " ready.");
             } else {
-                Lunch lunch = trRest.orderLunch("Usual lunch");
+                Lunch lunch = trRest.orderLunch(KindOfLunch.USKIND);
                 System.out.println(lunch.getName() + " ready.");
             }
         }

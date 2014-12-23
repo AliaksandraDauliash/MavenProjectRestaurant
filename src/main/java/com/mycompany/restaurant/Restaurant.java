@@ -18,10 +18,6 @@ public abstract class Restaurant {
         lunch = createLunch(type);
         String str = lunch.toString();
         System.out.println(str);
-        boolean flag = lunch.equals(lunch);
-        if(flag){
-            System.out.println("Object is created!");
-        }
         lunch.prepare();
         lunch.cook();
         lunch.unfold();

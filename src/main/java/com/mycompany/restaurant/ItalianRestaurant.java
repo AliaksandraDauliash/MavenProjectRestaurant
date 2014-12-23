@@ -23,10 +23,9 @@ public class ItalianRestaurant extends Restaurant {
 
     @Override
     protected Lunch createLunch(String type) {
-        KindOfLunch kind = new KindOfLunch();
-        if (type.equals(kind.vegkind)) {
+        if (type.equals(KindOfLunch.VEGKIND)) {
             return new VegeterianItalianLunch();
-        } else if (type.equals(kind.uskind)) {
+        } else if (type.equals(KindOfLunch.USKIND)) {
             return new UsualItalianLunch();
         } else {
             return null;

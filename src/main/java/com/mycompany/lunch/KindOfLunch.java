@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.mycompany.lunch;
 
 /**
  *
  * @author 123
  */
-public class KindOfLunch {
-    public String vegkind;
-    public String uskind;
-    public KindOfLunch(){
-        vegkind="Vegeterian lunch";
-        uskind="Usual lunch";
+public final class KindOfLunch {
+
+    public final static String VEGKIND = "Vegeterian lunch";
+    public final static String USKIND = "Usual lunch";
+
+    private KindOfLunch() {
     }
 }

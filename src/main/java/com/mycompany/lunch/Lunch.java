@@ -5,6 +5,8 @@
  */
 package com.mycompany.lunch;
 
+import java.util.Objects;
+
 /**
  *
  * @author 123
@@ -41,9 +43,47 @@ public abstract class Lunch {
         System.out.println("Serving dishes to customers");
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Lunch other = (Lunch) obj;
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.salad, other.salad)) {
+            return false;
+        }
+        if (!Objects.equals(this.first, other.first)) {
+            return false;
+        }
+        if (!Objects.equals(this.second, other.second)) {
+            return false;
+        }
+        if (!Objects.equals(this.drinks, other.drinks)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.name);
+        hash = 67 * hash + Objects.hashCode(this.salad);
+        hash = 67 * hash + Objects.hashCode(this.first);
+        hash = 67 * hash + Objects.hashCode(this.second);
+        hash = 67 * hash + Objects.hashCode(this.drinks);
+        return hash;
+    }
+
+    @Override
     public String toString() {
-        String str = new String();
-        str = "Name: " + name;
+        String str = "Name: " + name + "; Salad: " + salad + "; First: " + first + "; Second: " + second + "; Drinks: " + drinks + ";";
         return str;
     }
 }
